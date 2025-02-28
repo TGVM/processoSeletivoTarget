@@ -10,6 +10,7 @@
 # percentual de representação que cada estado teve dentro do valor 
 # total mensal da distribuidora.  
 
+# Definição do vetor
 listaFaturamento = [
     {'estado': "SP", 'valor': 67836.43},
     {'estado': "RJ", 'valor': 36678.66},
@@ -18,14 +19,19 @@ listaFaturamento = [
     {'estado': "Outros", 'valor': 19849.53}
 ]
 
+# calculo simples para definir a porcentagem
 def CalculaPorcentagem(total, valor):
     return 100 * valor/total
 
+# soma do valor total
 total = 0
 for item in listaFaturamento:
     total += item['valor']
 
+# print do valor total
 print("Faturamento total: "+str(total))
+
+# Print de cada um dos valores da lista
 for item in listaFaturamento:
     print("O estado "+item['estado']+" teve faturamento equivalente a "+str(CalculaPorcentagem(total, item['valor']))+"% do total.")
 
